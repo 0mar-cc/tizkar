@@ -1,43 +1,106 @@
-body {background-color : #ededed; font-family : "Open Sans", sans-serif;}
+body {
+  background-color : #ededed; 
+  font-family : 'Times New Roman', Times, serif;
+  display:flex;
+  flex-direction: column;
+  padding: 0px;
+  margin: 0px;
+}
 
-h1 {padding: 40px; text-align: center; font-size: 1.5em;}
+.header{
+  display: flex;
+  background-color: #333333;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+}
 
-li a {text-decoration : none; color : #2d2f31;}
+.socialMedia{
+  margin-left: 15px;
+}
+
+.socialMedia img{
+  padding: 0 3px 0 3px;
+}
+
+li a {text-decoration : none; color : #333333;}
 
 
-nav {
-  width : 300px; 
-  background: #d9d9d9;
-  margin : 40px auto; 
+.language {
+  width : 110px;
+  height:20px; 
+  margin-right : 40px; 
 }
 
 span {
-  padding : 30px;
-  background : #2d2f31; 
-  color : white;
-  font-size : 1.2em;
-  font-variant : small-caps;
+  background : none; 
+  color : rgb(255, 255, 255);
+  font-size : 0.9em;
   cursor : pointer;
-  display: block;
+  display: flex;
+  gap:50px;
 }
 
 span::after {
-  float: right;
-  right: 10%;
-  content: "+";
+  float: left;
+  left: 10%;
+  content: "\2630";
 }
 
 .slide {
   clear:both;
-  width:100%;
+  width:90%;
   height:0px;
   overflow: hidden;
-  text-align: center;
   transition: height .4s ease;
+  background-color: #3333332a;
+  color:white;
 }
 
-.slide li {padding : 30px;}
+.slide li {
+  padding : 15px 0 15px 0;
+  list-style-type:none;
+}
 
-#touch {position: absolute; opacity: 0; height: 0px;}    
 
-#touch:checked + .slide {height: 300px;} 
+
+#touch {position:absolute; opacity: 0; height: 0px;}    
+
+#touch:checked + .slide {height: 240px;} 
+
+
+.text-typing { 
+  font-size: 18px; 
+  font-family: "Vazirmatn Regular"; 
+  color: white;
+  overflow: hidden; 
+} 
+
+.text-typing p { 
+  white-space: nowrap; 
+  clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0); 
+  animation:  4s typing  steps(22, end) forwards, blink 1s infinite; 
+}
+  
+
+@keyframes typing { 
+  0% { 
+      width: 0% 
+  } 
+
+  100% { 
+      width: 100% 
+  } 
+} 
+
+@keyframes blink { 
+
+  0%, 
+  100% { 
+      border-right: 2px solid transparent; 
+  } 
+
+  50% { 
+      border-right: 2px solid #222; 
+  } 
+} 
