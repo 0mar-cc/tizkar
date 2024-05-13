@@ -229,7 +229,7 @@ span::after {
   /* -webkit-box-shadow: 0 0 70px #fff;
   -moz-box-shadow: 0 0 70px #fff; */
   /* box-shadow: 0 0 70px #fff; */
-  margin-top: 1px;
+  /* margin-top: 1px; */
   font-size: 15px;
   background-color: #333333;
 
@@ -404,4 +404,21 @@ ul.primary li:hover > a{
     color: #ccc;
     background: none;
   }
+}
+
+hr {
+  margin:0px;
+}
+
+.offer{
+  background-color: #C5A056;
+  color: white;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 30px;
+  /* width:600px; */
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 70px 350px 0 350px;
 }
