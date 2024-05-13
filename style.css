@@ -1,6 +1,11 @@
 @use postcss-color-function;
 @use postcss-nested;
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,700,900');
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:600);
+@import url('https://fonts.googleapis.com/css?family=Montserrat:600');
+@import url("https://fonts.googleapis.com/css?family=Montserrat:600");
+
+
 
 body {
   background-color : #ededed; 
@@ -37,7 +42,7 @@ body {
   color:#333333;
 }
 
-span {
+.language span {
   background : none; 
   color:#333333;
   font-size : 0.9em;
@@ -46,13 +51,13 @@ span {
   gap:50px;
 }
 
-span::after {
+.language span::after {
   float: left;
   left: 10%;
   content: "\2630";
 }
 
-.slide {
+.slides {
   clear:both;
   width:90%;
   height:0px;
@@ -65,25 +70,25 @@ span::after {
   margin-top: 35px;
 }
 
-.slide li {
+.slides li {
   padding : 15px 0 15px 0;
   list-style-type:none;
   margin-left: -30px;
 }
 
-.slide li:hover{
+.slides li:hover{
   color: white;
   background-color: rgb(197, 197, 197);
   width: 100px;
   padding-left: 5px;
 }
 
-.slide li a {text-decoration : none; color : #333333;}
+.slides li a {text-decoration : none; color : #333333;}
 
 
 #touch {position:relative; opacity: 0; height: 0px;}    
 
-#touch:checked + .slide {height: 290px;} 
+#touch:checked + .slides {height: 290px;} 
 
 
 .text-typing { 
@@ -414,11 +419,173 @@ hr {
   background-color: #C5A056;
   color: white;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 30px;
+  font-size: 27px;
   /* width:600px; */
   height: 72px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 70px 350px 0 350px;
+  align-self: center;
+  width:1300px;
+  margin-top: 70px;
+  margin-bottom: 20px;
+}
+
+.text {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  margin-left: -215px;
+}
+
+p {
+  display: inline-block;
+}
+
+.word {
+  position: absolute;
+  opacity: 0;
+}
+
+.letter {
+  display: inline-block;
+  transform: translateZ(25px);
+  transform-origin: 50% 50% 25px;
+}
+
+.letter.out {
+  transform: rotateX(90deg);
+  transition: transform 0.32s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.letter.behind {
+  transform: rotateX(-90deg);
+}
+
+.letter.in {
+  transform: rotateX(0deg);
+  transition: transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.wisteria {
+  color: #8e44ad;
+}
+
+.belize {
+  color: #2980b9;
+}
+
+.pomegranate {
+  color: #c0392b;
+}
+
+.green {
+  color: #16a085;
+}
+
+.midnight {
+  color: #2c3e50;
+}
+
+
+
+
+.header__main {
+  position: relative;
+  min-height: 55vh;
+  overflow: hidden;
+  text-align: left;
+  align-self: center;
+  width: 1300px;
+}
+
+.slider {
+  width: 100vw;
+  height: 55vh;
+}
+
+.slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 52vh;
+  position: absolute;
+  width: 100%;
+}
+.slide:target .slide__bg {
+  opacity: 1;
+}
+.slide:target .slide__image {
+  transform: translate(0);
+  opacity: 1;
+  transition-delay: 0.5s;
+  filter: blur(0) drop-shadow(0px 10px 30px rgba(0, 0, 0, 0.35));
+}
+
+.slide__bg {
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(2);
+  filter: blur(50px);
+  opacity: 0;
+  transition: opacity 1s ease;
+  will-change: opacity;
+}
+
+.slide__images {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  height: 365px;
+  margin: 0 20px;
+}
+
+.slide__image {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  transition: all 0.5s ease-in-out 0s;
+  filter: blur(10px) drop-shadow(0px 10px 30px rgba(0, 0, 0, 0.35));
+  will-change: transform, opacity, filter;
+}
+.slide__image svg {
+  display: block;
+}
+.slide__image--left {
+  transform: translate(0.75%, -10px);
+}
+.slide__image--right {
+  top: 5vmin;
+  transform: translate(-0.75%, 10px);
+}
+
+.slider__pagination {
+  position: absolute;
+  bottom: 7vh;
+  width: 100%;
+  text-align: center;
+}
+
+.button {
+  position: relative;
+  display: inline-block;
+  padding: 20px 40px;
+  border: 2px solid #fff;
+  line-height: 1;
+  font: 600 12px "Montserrat", sans-serif;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: white;
+  transition: all 0.25s ease;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.button:hover {
+  color: #333;
+  background-color: white;
 }
