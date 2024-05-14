@@ -492,7 +492,7 @@ p {
 
 .header__main {
   position: relative;
-  min-height: 55vh;
+  min-height: 50vh;
   overflow: hidden;
   text-align: left;
   align-self: center;
@@ -501,8 +501,10 @@ p {
 
 .slider {
   width: 100vw;
-  height: 55vh;
+  height: 50vh;
 }
+
+
 
 .slide {
   display: flex;
@@ -538,9 +540,11 @@ p {
   position: relative;
   width: 100%;
   max-width: 900px;
-  height: 365px;
+  height: 430px;
   margin: 0 20px;
 }
+
+
 
 .slide__image {
   position: absolute;
@@ -553,6 +557,8 @@ p {
 .slide__image svg {
   display: block;
 }
+
+.slide
 .slide__image--left {
   transform: translate(0.75%, -10px);
 }
@@ -563,7 +569,7 @@ p {
 
 .slider__pagination {
   position: absolute;
-  bottom: 7vh;
+  bottom: 6vh;
   width: 100%;
   text-align: center;
 }
