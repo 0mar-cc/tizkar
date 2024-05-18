@@ -526,6 +526,7 @@ h2{
   align-self: center;
   margin-top: 50px;
 }
+
 #wrapper {
   width: 100%;
   max-width: 1300px;
@@ -591,6 +592,15 @@ h2{
   border-color: #C5A056;
 }
 
+.productContent{
+  display: flex;
+  flex-direction: column;
+  height: 180px;
+  width: 203px;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
 .productName{
   font-family: "Open Sans";
   color:#000000CC;
@@ -598,19 +608,36 @@ h2{
   font-weight: 400;
   margin-top: 30px;
   margin-left: 5px;
+  height: 40px;
   
 }
-.productName a{
+
+
+.productName a {
+	color: #000000CC;
+  position: relative;
   text-decoration: none;
-  cursor: pointer;
   font-family: "Open Sans";
-  color:#000000CC;
   font-size: 14px;
-  background-color: transparent;
 }
 
-.productName a:-webkit-any-link {
-  text-decoration: underline;
+.productName a::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  border-radius: 4px;
+  background-color: #18272F;
+  bottom: 0;
+  left: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform .3s ease-in-out;
+}
+
+.productName a:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
 }
 
 .price{
@@ -632,11 +659,6 @@ h2{
   margin-left: 5px;
 }
 
-
-
-
-
-/* CSS */
 .addCart {
   background: #333333;
   border: 1px solid #333333;
@@ -653,7 +675,6 @@ h2{
   height: 30px;
   width: 195px;
   outline: 0;
-  /* padding: 0px 14px; */
   text-align: center;
   text-rendering: geometricprecision;
   text-transform: none;
@@ -738,4 +759,132 @@ h2{
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.circleCategories{
+  width: 1300px;
+  margin-top: 60px;
+  display: flex;
+  align-self: center;
+  text-align: center;
+  font-family: "Open Sans";
+  font-size: 16px;
+  justify-content: space-around;
+}
+
+.circleCategories img{
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+}
+
+.circleCategoryName a {
+	color: #000000CC;
+  position: relative;
+  text-decoration: none;
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-weight: 100;
+}
+
+.circleCategoryName a::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  border-radius: 4px;
+  background-color: #18272F;
+  bottom: 0;
+  left: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform .3s ease-in-out;
+}
+
+.circleCategoryName a:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+.twoSignTemplate{
+  width: 1300px;
+  display: flex;
+  align-self: center;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 80px;
+}
+
+.brandNew{
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 1300px;
+}
+
+
+#wrapper2 {
+  width: 100%;
+  max-width: 1300px;
+  position: relative;
+  align-self: center;
+}
+
+#carousel2 {
+  overflow: auto;
+  scroll-behavior:smooth;
+  scrollbar-width: none;
+}
+
+#carousel2::-webkit-scrollbar {
+  height: 0;
+}
+
+#prev2,
+#next2 {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background: rgba(224, 222, 222, 0.555);
+  border: none;
+  padding: 15px;
+  border-radius: 50%;
+  outline: 0;
+  cursor: pointer;
+  position: absolute;
+}
+
+#prev2 {
+  top: 30%;
+  left: -50px;
+  transform: translate(50%, -50%);
+  display: none;
+}
+
+#next2 {
+  top: 30%;
+  right: -50px;
+  transform: translate(-50%, -50%);
+}
+
+#content2 {
+  display: grid;
+  grid-gap: 16px;
+  grid-auto-flow: column;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+.item2 {
+  width: 203px;
+  height: 203px;
+  /* background: #c9c7c7; */
+  border-radius: 8px;
+}
+
+#content2 img{
+  border-radius: 8px;
+  border-style: solid;
+  border-color: #C5A056;
 }
